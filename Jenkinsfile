@@ -27,7 +27,12 @@ pipeline {
     }
     post{
          success{
-             sh ' docker prune -a --filter "until=20s" '
+             sh stage('Clean Up') {
+    steps {
+        sh 'docker system prune -a --filter until=20s'
+    }
+}
+
           }
      }
     
