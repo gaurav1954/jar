@@ -24,10 +24,11 @@ pipeline {
                 sh "docker push $DOCKER_IMAGE_NAME"
             }
         }
-        post{
-            success{
-                sh ' docker prune -a --filter "until=20s" '
-            }
-        }
     }
+    post{
+         success{
+             sh ' docker prune -a --filter "until=20s" '
+          }
+     }
+    
 }
