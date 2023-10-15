@@ -7,7 +7,7 @@ WORKDIR /app
 # Copy the project's source code to the container
 COPY . .
 
-# Compile your Java code to create the JAR file
+# Compile your Java code to create the class
 RUN javac -cp . abc.java
 
 # Create a JAR file from the compiled classes
