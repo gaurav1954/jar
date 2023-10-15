@@ -8,10 +8,10 @@ WORKDIR /app
 COPY . .
 
 # Compile your Java code to create the class
-RUN javac -cp . abc.java
+RUN javac abc.java
 
 # Create a JAR file from the compiled classes
-RUN jar cf abc.jar abc.class
+RUN jar cfe abc.jar abc abc.class
 
 # Define the command to run your application
 CMD ["java", "-jar", "abc.jar"]
